@@ -1,7 +1,7 @@
 import pandas as pd
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
 import os
+import re
+from collections import Counter
 
 # ================= LOAD DATA =================
 # Get the absolute path to the CSV file
@@ -20,8 +20,44 @@ df_master["combined_features"] = (
     df_master["travel_type"].fillna("")
 )
 
-tfidf = TfidfVectorizer(stop_words="english")
-tfidf_matrix = tfidf.fit_transform(df_master["combined_features"])
+# Preprocess text for matching
+def preprocess_text(text):
+    """Convert text to lowercase and extract keywords"""
+    text = text.lower()
+    # Remove special characters and split into words
+    words = re.findall(r'\b\w+\b', text)
+    # Remove common stop words
+    stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by'}
+    return [w for w in words if w not in stop_words and len(w) > 2]
+
+# Preprocess all destination features
+df_master["keywords"] = df_master["combined_features"].apply(preprocess_text)
+
+
+# ================= LIGHTWEIGHT SIMILARITY =================
+def calculate_similarity(user_keywords, destination_keywords):
+    """Calculate simple keyword overlap similarity"""
+    if not user_keywords or not destination_keywords:
+        return 0.0
+    
+    user_set = set(user_keywords)
+    dest_set = set(destination_keywords)
+    
+    # Jaccard similarity with boost for exact matches
+    intersection = len(user_set & dest_set)
+    union = len(user_set | dest_set)
+    
+    if union == 0:
+        return 0.0
+    
+    # Base similarity
+    similarity = intersection / union
+    
+    # Boost for multiple matches
+    if intersection > 1:
+        similarity *= (1 + (intersection - 1) * 0.1)
+    
+    return min(similarity, 1.0)
 
 
 # ================= RECOMMENDER =================
@@ -52,16 +88,13 @@ def recommend_destinations(interests, budget, days, visited_votes, people, regio
     if df.empty:
         return df
 
-    # Interest similarity
-    user_text = " ".join(interests)
-    user_vector = tfidf.transform([user_text])
-
-    similarity = cosine_similarity(
-        user_vector,
-        tfidf.transform(df["combined_features"])
-    )[0]
-
-    df["interest_score"] = similarity
+    # Interest similarity using lightweight keyword matching
+    user_keywords = preprocess_text(" ".join(interests))
+    
+    df["interest_score"] = df["keywords"].apply(
+        lambda dest_keywords: calculate_similarity(user_keywords, dest_keywords)
+    )
+    
     df["duration_score"] = (
         1 - abs(df["recommended_days"] - days) / df["recommended_days"]
     ).clip(0, 1)
@@ -75,9 +108,12 @@ def recommend_destinations(interests, budget, days, visited_votes, people, regio
     ) * df["vote_penalty"]
 
     # Normalize for UI
-    df["final_score_pct"] = (
-        (df["final_score"] / df["final_score"].max()) * 100
-    ).round(1)
+    if df["final_score"].max() > 0:
+        df["final_score_pct"] = (
+            (df["final_score"] / df["final_score"].max()) * 100
+        ).round(1)
+    else:
+        df["final_score_pct"] = 0
 
     # ================= EXPLAINABILITY =================
     def interest_label(x):
