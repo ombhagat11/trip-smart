@@ -1,0 +1,50 @@
+destination,avg_daily_cost,travel_type,best_season,rating,activities,recommended_days,region,destination_latitude,destination_longitude
+Goa,2500,Beach,Winter,4.6,Party|Relax|Beach Walk,4,West,15.2993,74.1240
+Manali,1800,Nature,Summer,4.7,Trekking|Snow|Sightseeing,5,North,32.2432,77.1892
+Jaipur,1500,Culture,Winter,4.4,Fort Visit|Heritage|Shopping,3,North,26.9124,75.7873
+Rishikesh,1200,Adventure|Religious,All,4.5,Rafting|Yoga|Ganga Aarti,3,North,30.0869,78.2676
+Udaipur,1700,Culture,Winter,4.6,Lake Tour|Palace Visit|Photography,3,West,24.5854,73.7125
+Agra,1600,History,Winter,4.5,Taj Mahal|Heritage Walk,2,North,27.1767,78.0081
+Delhi,2000,City|Culture,Winter,4.3,Monuments|Food Tour|Shopping,3,North,28.6139,77.2090
+Mumbai,2500,City|Beach,Winter,4.4,Marine Drive|Shopping|Nightlife,3,West,19.0760,72.8777
+Pune,1800,City|Culture,Winter,4.3,Heritage Walk|Food Tour,2,West,18.5204,73.8567
+Bengaluru,2000,City,Winter,4.4,Gardens|Cafes|Tech Parks,3,South,12.9716,77.5946
+Chennai,1900,City|Beach,Winter,4.3,Temples|Beach Walk,3,South,13.0827,80.2707
+Hyderabad,1800,City|History,Winter,4.4,Charminar|Food Tour,3,South,17.3850,78.4867
+Kolkata,1700,Culture|City,Winter,4.5,Heritage Walk|Food Tour,3,East,22.5726,88.3639
+Amritsar,1500,Religious,Winter,4.6,Golden Temple|Border Ceremony,2,North,31.6340,74.8723
+Shimla,1600,Hill Station,Summer,4.5,Mall Road|Sightseeing,3,North,31.1048,77.1734
+Mussoorie,1600,Hill Station,Summer,4.4,Hill Walk|Viewpoints,3,North,30.4598,78.0660
+Nainital,1700,Hill Station,Summer,4.5,Lake Boating|Sightseeing,3,North,29.3919,79.4542
+Varanasi,1400,Religious,Winter,4.6,Ganga Aarti|Temple Visit,3,North,25.3176,82.9739
+Ayodhya,1300,Religious,Winter,4.5,Ram Mandir|Ghats,2,North,26.7922,82.1998
+Mathura,1300,Religious,Winter,4.4,Krishna Temples,2,North,27.4924,77.6737
+Vrindavan,1300,Religious,Winter,4.5,Temple Visit|Parikrama,2,North,27.5650,77.6593
+Haridwar,1400,Religious,Winter,4.5,Ganga Aarti|Ghats,2,North,29.9457,78.1642
+Jodhpur,1600,Culture,Winter,4.5,Fort Visit|City Walk,3,West,26.2389,73.0243
+Jaisalmer,1700,Desert,Winter,4.6,Desert Safari|Fort Visit,3,West,26.9157,70.9083
+Mount Abu,1600,Hill Station,Winter,4.4,Sightseeing|Lakes,2,West,24.5926,72.7156
+Ahmedabad,1500,City|Culture,Winter,4.4,Heritage Walk|Sabarmati,2,West,23.0225,72.5714
+Surat,1500,City,Winter,4.2,Shopping|Food Tour,2,West,21.1702,72.8311
+Vadodara,1500,City|Culture,Winter,4.3,Palace Visit|Museums,2,West,22.3072,73.1812
+Indore,1500,City,Winter,4.4,Food Tour|Heritage,2,Central,22.7196,75.8577
+Bhopal,1500,City|History,Winter,4.3,Lakes|Museums,2,Central,23.2599,77.4126
+Gwalior,1400,History,Winter,4.4,Fort Visit,2,Central,26.2183,78.1828
+Khajuraho,1600,Heritage,Winter,4.6,Temple Visit,2,Central,24.8318,79.9199
+Orchha,1500,Heritage,Winter,4.5,Fort Visit|River Walk,2,Central,25.3516,78.6406
+Raipur,1400,City,Winter,4.2,City Tour,2,Central,21.2514,81.6296
+Jagdalpur,1500,Nature,Winter,4.4,Waterfalls|Tribal Culture,3,Central,19.0741,82.0080
+Bastar,1500,Nature,Winter,4.5,Forests|Waterfalls,3,Central,19.0771,81.9535
+Ranchi,1500,Nature,Winter,4.4,Waterfalls|Hills,2,East,23.3441,85.3096
+Patna,1500,City|History,Winter,4.3,Heritage Walk,2,East,25.5941,85.1376
+Bodh Gaya,1400,Religious,Winter,4.6,Mahabodhi Temple,2,East,24.6959,84.9912
+Darjeeling,1800,Hill Station,Summer,4.6,Tea Gardens|Toy Train,3,East,27.0360,88.2627
+Gangtok,1800,Hill Station,Summer,4.6,Monasteries|Sightseeing,3,East,27.3314,88.6138
+Shillong,1700,Hill Station,Summer,4.5,Waterfalls|Music,3,North-East,25.5788,91.8933
+Cherrapunji,1700,Nature,Summer,4.6,Living Root Bridges,2,North-East,25.2849,91.5822
+Kaziranga,1800,Wildlife,Winter,4.7,Safari|Bird Watching,3,North-East,26.5775,93.1711
+Guwahati,1600,Religious|City,Winter,4.4,Kamakya Temple|River Cruise,2,North-East,26.1445,91.7362
+Majuli,1500,Culture|Nature,Winter,4.6,Satra Visit|Island Tour,3,North-East,27.0016,94.2243
+Ziro Valley,1700,Nature|Culture,Summer,4.7,Valley Walk|Festival,3,North-East,27.5944,93.8286
+Imphal,1500,Culture|History,Winter,4.4,Loktak Lake|Heritage,3,North-East,24.8170,93.9368
+Agartala,1400,Culture,Winter,4.3,Palace Visit|Culture,2,North-East,23.8315,91.2868
